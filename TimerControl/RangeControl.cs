@@ -12,12 +12,30 @@ namespace TimerControl
 {
     public partial class RangeControl : UserControl
     {
-        public int Start { get { return StartBox.Value; } }
-        public int End { get { return EndBox.Value; } }
+        public int Start { get { return StartBox.Value; } set { StartBox.Value = value; } }
+        public int End { get { return EndBox.Value; } set { EndBox.Value = value; } }
 
         public RangeControl()
         {
             InitializeComponent();
+        }
+
+        public void Enable()
+        {
+            this.StartBox.Enabled = true;
+            this.EndBox.Enabled = true;
+        }
+
+        public void Disable()
+        {
+            this.StartBox.Enabled = false;
+            this.EndBox.Enabled = false;
+        }
+
+
+        public bool IsValid()
+        {
+            return Start > End;
         }
 
         private void numberBox1_TextChanged(object sender, EventArgs e)

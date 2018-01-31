@@ -14,6 +14,10 @@ namespace TimerControl
     public partial class TimeControl : UserControl
     {
         private Timer timer;
+        private int TimeInterval { get; set; } = 1000;
+        private int hoursValue;
+        private int minutesValue;
+        private int secondsValue;
         private int startingSeconds = 0;
         public int seconds
         {
@@ -31,11 +35,34 @@ namespace TimerControl
             InitializeComponent();
             timer = new Timer();
             timer.Tick += Tick;
-            End += OnEnd;
+            End += Stop;
         }
 
-        private void OnEnd()
+        public void Stop()
         {
+            ResetCurrentValues();
+            timer.Stop();
+            hoursBox.Enabled = true;
+            minutesBox.Enabled = true;
+            secondsBox.Enabled = true;
+            Invalidate();
+        }
+
+        public void Pause()
+        {
+            timer.Stop();
+        }
+
+        public void Resume()
+        {
+            timer.Start();
+        }
+
+        private void ResetCurrentValues()
+        {
+            this.hoursBox.Value = hoursValue;
+            this.minutesBox.Value = minutesValue;
+            this.secondsBox.Value = secondsValue;
         }
        
 
@@ -74,22 +101,31 @@ namespace TimerControl
             else
             {
                 End();
-                timer.Stop();
-                hoursBox.Enabled = true;
-                minutesBox.Enabled = true;
-                secondsBox.Enabled = true;
             }
+        }
+
+        private void UpdateCurrentValues()
+        {
+            this.secondsValue = secondsBox.Value;
+            this.minutesValue = minutesBox.Value;
+            this.hoursValue = hoursBox.Value;
+        }
+
+        private void DisableControls()
+        {
+            hoursBox.Enabled = false;
+            minutesBox.Enabled = false;
+            secondsBox.Enabled = false;
         }
 
         public void Start()
         {
+            UpdateCurrentValues();
+            DisableControls();
             this.startingSeconds = seconds;
             Console.WriteLine(seconds);
-            timer.Interval = 500;
+            timer.Interval = TimeInterval;
             timer.Start();
-            hoursBox.Enabled = false;
-            minutesBox.Enabled = false;
-            secondsBox.Enabled = false;
         }
 
         protected override void OnPaint(PaintEventArgs e)

@@ -42,7 +42,7 @@
             // 
             this.hoursLabel.AutoSize = true;
             this.hoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hoursLabel.Location = new System.Drawing.Point(8, 12);
+            this.hoursLabel.Location = new System.Drawing.Point(0, 12);
             this.hoursLabel.Name = "hoursLabel";
             this.hoursLabel.Size = new System.Drawing.Size(46, 17);
             this.hoursLabel.TabIndex = 3;
@@ -52,7 +52,7 @@
             // 
             this.minutesLabel.AutoSize = true;
             this.minutesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minutesLabel.Location = new System.Drawing.Point(66, 12);
+            this.minutesLabel.Location = new System.Drawing.Point(58, 12);
             this.minutesLabel.Name = "minutesLabel";
             this.minutesLabel.Size = new System.Drawing.Size(57, 17);
             this.minutesLabel.TabIndex = 4;
@@ -62,7 +62,7 @@
             // 
             this.secondsLabel.AutoSize = true;
             this.secondsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondsLabel.Location = new System.Drawing.Point(134, 12);
+            this.secondsLabel.Location = new System.Drawing.Point(126, 12);
             this.secondsLabel.Name = "secondsLabel";
             this.secondsLabel.Size = new System.Drawing.Size(63, 17);
             this.secondsLabel.TabIndex = 5;
@@ -72,7 +72,7 @@
             // 
             this.hmColinLabel.AutoSize = true;
             this.hmColinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hmColinLabel.Location = new System.Drawing.Point(50, 31);
+            this.hmColinLabel.Location = new System.Drawing.Point(42, 31);
             this.hmColinLabel.Name = "hmColinLabel";
             this.hmColinLabel.Size = new System.Drawing.Size(24, 32);
             this.hmColinLabel.TabIndex = 6;
@@ -82,7 +82,7 @@
             // 
             this.msColinLabel.AutoSize = true;
             this.msColinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msColinLabel.Location = new System.Drawing.Point(117, 31);
+            this.msColinLabel.Location = new System.Drawing.Point(109, 31);
             this.msColinLabel.Name = "msColinLabel";
             this.msColinLabel.Size = new System.Drawing.Size(24, 32);
             this.msColinLabel.TabIndex = 7;
@@ -92,7 +92,7 @@
             // 
             this.secondsBox.Digits = 2;
             this.secondsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondsBox.Location = new System.Drawing.Point(143, 28);
+            this.secondsBox.Location = new System.Drawing.Point(135, 28);
             this.secondsBox.Name = "secondsBox";
             this.secondsBox.Size = new System.Drawing.Size(42, 41);
             this.secondsBox.TabIndex = 2;
@@ -103,7 +103,7 @@
             // 
             this.minutesBox.Digits = 2;
             this.minutesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minutesBox.Location = new System.Drawing.Point(73, 28);
+            this.minutesBox.Location = new System.Drawing.Point(65, 28);
             this.minutesBox.Name = "minutesBox";
             this.minutesBox.Size = new System.Drawing.Size(42, 41);
             this.minutesBox.TabIndex = 1;
@@ -114,7 +114,7 @@
             // 
             this.hoursBox.Digits = 2;
             this.hoursBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hoursBox.Location = new System.Drawing.Point(10, 28);
+            this.hoursBox.Location = new System.Drawing.Point(2, 28);
             this.hoursBox.Name = "hoursBox";
             this.hoursBox.Size = new System.Drawing.Size(42, 41);
             this.hoursBox.TabIndex = 0;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.hmColinLabel);
             this.Controls.Add(this.msColinLabel);
             this.Name = "TimeControl";
-            this.Size = new System.Drawing.Size(205, 92);
+            this.Size = new System.Drawing.Size(186, 72);
             this.ResumeLayout(false);
             this.PerformLayout();
 

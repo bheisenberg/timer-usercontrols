@@ -14,24 +14,18 @@ namespace TimerControl
     public partial class NumberBox : SelectableTextBox
     {
         public int Digits { get; set; } = 2;
-        public string DefaultValue { get; set; } = "00";
+        public bool FormatCommas { get; set; }
+        public int DefaultValue { get; set; }
         private string numberPattern = @"[0-9]";
         public int Value
         {
             get
             {
-                return int.Parse(this.Text);
+                return int.Parse(this.Text.Replace(",", ""));
             }
             set
             {
-                if (value < 10)
-                {
-                    this.Text = "0" + value;
-                }
-                else
-                {
-                    this.Text = "" + value;
-                }
+                this.Text = FormatText(""+value);
             }
         }
 
@@ -40,10 +34,7 @@ namespace TimerControl
         {
             InitializeComponent();
             this.AcceptsReturn = false;
-            if(Text == "")
-            {
-                Value = 0;
-            }
+            this.ShortcutsEnabled = false;
         }
 
         protected override void OnKeyPress(KeyPressEventArgs e)
@@ -72,23 +63,20 @@ namespace TimerControl
 
         private void FormatText()
         {
-            if (int.Parse(this.Text) < 10 && this.Text.Length == 1)
-            {
-                this.Text = "0" + this.Text;
-            }
+            Text = FormatText(Text);
+        }
+
+        private string FormatText(string text)
+        {
+            int value = (Text.Length > 0) ? int.Parse(text.Replace(",", "")) : 0;
+            string valueBase = (value < 10) ? "0" : "";
+            return valueBase + value.ToString("N0");
         }
 
         protected override void OnLeave(EventArgs e)
         {
             base.OnLeave(e);
-            if (this.Text == "")
-            {
-                this.Text = this.DefaultValue;
-            }
-            else
-            {
-                FormatText();
-            }
+            FormatText();
         }
 
     }
